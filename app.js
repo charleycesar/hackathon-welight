@@ -8,7 +8,7 @@ var hackathon = angular.module('hackathon',['ngResource'])
     $scope.salvarCausa = function(){
     	var endpoint = "http://192.168.103.141:5000/api/causa/";
 	    $scope.usuario = JSON.parse(localStorage.getItem('usuario'));
-    	$scope.form.usuario_id = $scope.usuario.user;
+    	$scope.form.usuario_id = $scope.usuario && $scope.usuario.user;
 
     	$http.post(endpoint, $scope.form).then(
     		function(result){
