@@ -17,22 +17,22 @@
   <h5>Como pode ajudar?</h5>
   <p>Envie uma mensagem para o criador deste problema.</p>
     <div class="row">
-    <form class="col s12" action="enviar.php" method="POST">
+    <form class="col s12"  method="POST" action="enviar.php">
       <input type="hidden" name="data" value="{{causa}}" />
       <input type="hidden" name="user" value="{{usuario.user}}">
-      <div class="row">
+      <div class="row" ng-init="message=false;">
 
         <div class="input-field col s12">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
           <label for="textarea1">Descrição</label>
         </div>
 
-
         <div class="input-field col s12 center">
-        	<input type="submit" value="enviar" class="btn degrade" />
+        	<input ng-click="message=true" type="submit" value="enviar" class="btn degrade" />
         </div>
       </div>
     </form>
+    <div ng-if="message" class="col s12 sucesso">Mensagem Enviada Com Sucesso.</div>
   </div>
   </div>
 </div>

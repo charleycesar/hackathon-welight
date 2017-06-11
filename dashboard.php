@@ -9,8 +9,8 @@
 </nav>
 <div class="row" ng-controller="CausaController">
   <br>
-      <div class="row" ng-repeat="row in causas" style="margin-bottom:0;">
-        <div class="col s12 m6">
+      <div class="row" ng-repeat="row in causas" style="margin-bottom:0;cursor:pointer;">
+        <div class="col s12">
           <a ng-click="salvaProblemaParaProximaPagina(row._id)">
             <div class="card">
               <div class="card-content">

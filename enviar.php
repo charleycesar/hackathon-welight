@@ -1,11 +1,23 @@
 <?php
-	header('Content-type: application/json');
-	$dados = json_decode($_POST['data']);
-    $msg = "Contato: " . $dados->titulo . ", " . $dados->descricao . ", " . $dados->data . ", " . $dados->local . "";
-    $assunto = "Contato do Site";
-    $headers = "From:" . $_POST["user"] . "\r\n";
-    $ok = mail("lazoski@gmail.com",$assunto, $msg, $headers);
-    $response = array();
-    $response['resp'] = $ok;
-    echo json_encode($response);
+
+
+	require("vendor/PHPMailer-master/PHPMailerAutoload.php");
+$mail = new PHPMailer();  
+$mail->IsSMTP();
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 587;
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = 'tls';
+$mail->Username = "chamageralapp@gmail.com";
+$mail->Password = "#chamageral";
+$mail->From     = "chamageralapp@gmail.com";
+$mail->AddAddress("charleycesar@gmail.com");
+$mail->Subject  = "Subject";
+$mail->Body     = "Hi!";
+if(!$mail->Send()) {
+    echo 'Message was not sent.';
+    echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent.';
+}
 ?>

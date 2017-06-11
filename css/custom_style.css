@@ -25,6 +25,13 @@ a {
 .brand-logo {
 	font-size:1.4rem!important;
 }
+.sucesso {
+	color:white;
+	padding:10px 15px !important;
+	background:green;
+	text-align:center;
+	width:100%;
+}
 /* LOGIN */
 .marca {
 	display:inline-block;

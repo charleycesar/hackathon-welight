@@ -14,7 +14,7 @@
 <div class="row" ng-controller="CausaProblemaController">
   <br>
       <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12">
             <div class="card white">
               <div class="card-content">
                 <span class="card-title">{{causa.titulo}}</span>
