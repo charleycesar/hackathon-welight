@@ -1,0 +1,13 @@
+body {
+	background:pink;
+}
+
+/* LOGIN */
+.marca {
+	display:inline-block;
+	background:green;
+	width:200px;
+	height:200px;
+	margin-top:40%;
+	margin-bottom:40%;
+}
