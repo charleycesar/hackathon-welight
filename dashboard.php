@@ -5,33 +5,21 @@
     <a class="brand-logo">Dashboard</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     </ul>
-    <a href="causa.html" class="right"><i class="material-icons">network_wifi</i></a>
   </div>   
 </nav>
-<nav>
-  <div class="nav-wrapper grey">
-    <form>
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </form>
-  </div>
-</nav>
-
-<div class="row">
+<div class="row" ng-controller="CausaController">
   <br>
-      <div class="row">
+{{usuario}}
+      <div class="row" ng-repeat="row in causas">
         <div class="col s12 m6">
-          <a href="problema.php">
+          <a ng-click="salvaProblemaParaProximaPagina(row._id)">
             <div class="card white">
               <div class="card-content">
-                <span class="card-title">Pintura da escola Capitão Mostarda</span>
-                <p class="truncate descricao">Caso de abandono. Há 15 anos, esta escola não é assistida pelo poder público.</p>
-                    <label class="comp_info">Data: 12/06/2017</label>
+                <span class="card-title">{{row.titulo}}</span>
+                <p class="truncate descricao">{{row.descricao}}</p>
+                    <label class="comp_info">Data: {{row.data}}</label>
                 <br>
-                    <label class="comp_info">Local: Ladeira da Glória, 98</label>
+                    <label class="comp_info">Local: {{row.local}}</label>
               </div>
             </div>
           </a>

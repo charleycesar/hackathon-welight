@@ -1,0 +1,17 @@
+<?php include "header.php"; ?>
+
+<div class="row" ng-controller="CadastroController">
+	<div class="container center-align"><br><br>
+	<h5>Seja bem vindo ao<br>#CHAMA<b>GERAL</b></h5><br>
+	<p>Cadastre-se e colabore com causas sociais que precisam de ajuda.</p>
+		<div class="col s12 center-align" ng-form="formulario">
+			<input name="name" required type="text" ng-model="form.name" placeholder="Nome de Usuário">
+			<input required type="email" ng-model="form.username" placeholder="Email">
+			<input required type="password" ng-model="form.password" placeholder="Senha"><br>&nbsp;<br>
+			<input type="button" name="" value="CADASTRAR" class="btn right blue" ng-click="cadastrar()">
+			<a class="btn left blue" href="login.php">LOGIN</a>
+		</div>
+	</div>
+</div>
+
+<?php include "footer.php"; ?>

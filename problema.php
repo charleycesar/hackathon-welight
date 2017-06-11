@@ -9,22 +9,24 @@
 </nav>
 
 
-<div class="row">
+<div class="row" ng-controller="CausaProblemaController">
   <br>
       <div class="row">
         <div class="col s12 m6">
             <div class="card white">
               <div class="card-content">
-                <span class="card-title">Pintura da escola Capitão Mostarda</span>
-                <p class="truncate descricao">Caso de abandono. Há 15 anos, esta escola não é assistida pelo poder público.</p>
-                    <label class="comp_info">Data: 12/06/2017</label>
+                <span class="card-title">{{causa.titulo}}</span>
+                <p class="descricao">{{causa.descricao}}</p>
+                    <label class="comp_info">Data: {{causa.data}}</label>
                 <br>
-                    <label class="comp_info">Local: Ladeira da Glória, 98</label>
+                    <label class="comp_info">Local: {{causa.local}}</label>
               </div>
             </div>
+            <br>
+            <a href="voluntariar.php" class="btn right blue">Colaborar</a>
+            <!--<a href="" class="btn left blue">#chamageral</a>-->
         </div>
       </div>
-
 </div>
 
 <?php include "footer.php"; ?>
