@@ -1,5 +1,5 @@
 body {
-	background:pink;
+
 }
 
 /* LOGIN */
@@ -10,4 +10,22 @@ body {
 	height:200px;
 	margin-top:40%;
 	margin-bottom:40%;
+}
+
+/* DASHBOARD */
+.card-title {
+	font-size:1.2rem!important;
+	font-weight: bold!important;
+}
+.card-content {
+	padding:8px 18px!important;
+}
+.descricao {
+	margin-bottom:8px!important;
+}
+
+/* NOVO_PROBLEMA */
+.case_box {
+	background:#ccc!important;
+	width:80%!important;
 }
