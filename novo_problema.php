@@ -2,8 +2,8 @@
 
 <nav>
   <div class="nav-wrapper">
-    <a href="dashboard.php"><i class="material-icons left">brightness_low</i></a>
-    <a href="#" class="brand-logo">Novo problema</a>
+    <a href="dashboard.php"><img src="img/seta.png" style="height:33px;margin:10px 10px"></a>
+    <a href="#" class="brand-logo">#CHAMA<b>GERAL</b></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     </ul>
   </div>   
@@ -44,8 +44,8 @@
           <label for="last_name">Status</label>
         </div>
 
-        <div class="input-field col s12">
-        	<input type="submit" name="" ng-click="salvarCausa();" value="#chamageral" class="btn right blue">
+        <div class="input-field col s12 center">
+        	<input type="submit" name="" ng-click="salvarCausa();" value="CONCLUIR" class="btn degrade	">
         </div>
       </div>
     </form>

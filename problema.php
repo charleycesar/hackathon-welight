@@ -1,8 +1,10 @@
 <?php include "header.php"; ?>
 <nav>
   <div class="nav-wrapper">
-    <a href="dashboard.php"><i class="material-icons left">brightness_low</i></a>
-    <a class="brand-logo">Caso</a>
+    <a href="dashboard.php">
+    <img src="img/seta.png" style="height:33px;margin:10px 10px">
+    </a>
+    <a class="brand-logo">#VISUALIZAÇÃO<b>GERAL</b></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     </ul>
   </div>   
@@ -23,7 +25,9 @@
               </div>
             </div>
             <br>
-            <a href="voluntariar.php" class="btn right blue">Colaborar</a>
+            <div class="row center">
+              <a href="voluntariar.php" class="btn degrade">Participar</a>
+            </div>
             <!--<a href="" class="btn left blue">#chamageral</a>-->
         </div>
       </div>

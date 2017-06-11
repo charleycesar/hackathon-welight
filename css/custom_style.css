@@ -1,7 +1,30 @@
 body {
 
 }
-
+p {
+	color:#999;
+}
+h5 {
+	color:#999;
+}
+nav {
+	background:linear-gradient(to right, #EE861F,#E43B79);
+}
+a {
+	color:#333;
+}
+.btn {
+	border-radius:20px;
+}
+.card {
+	background:#f8f8f8!important;
+}
+.degrade {
+	background:linear-gradient(to right, #EE861F,#E43B79);
+}
+.brand-logo {
+	font-size:1.4rem!important;
+}
 /* LOGIN */
 .marca {
 	display:inline-block;
@@ -26,5 +49,5 @@ body {
 
 /* NOVO_PROBLEMA */
 .recurso_box {
-	
+
 }

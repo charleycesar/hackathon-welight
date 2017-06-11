@@ -1,19 +1,18 @@
 <?php include "header.php"; ?>
 <nav>
   <div class="nav-wrapper">
-    <i class="material-icons left">brightness_low</i>
-    <a class="brand-logo">Dashboard</a>
+    
+    <a class="brand-logo">#LISTA<b>GERAL<b></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     </ul>
   </div>   
 </nav>
 <div class="row" ng-controller="CausaController">
   <br>
-{{usuario}}
-      <div class="row" ng-repeat="row in causas">
+      <div class="row" ng-repeat="row in causas" style="margin-bottom:0;">
         <div class="col s12 m6">
           <a ng-click="salvaProblemaParaProximaPagina(row._id)">
-            <div class="card white">
+            <div class="card">
               <div class="card-content">
                 <span class="card-title">{{row.titulo}}</span>
                 <p class="truncate descricao">{{row.descricao}}</p>

@@ -2,8 +2,10 @@
 
 <nav>
   <div class="nav-wrapper">
-    <a href="dashboard.php"><i class="material-icons left">brightness_low</i></a>
-    <a href="#" class="brand-logo">Voluntariar</a>
+    <a onclick="javascript:history.back(-1)">
+      <img src="img/seta.png" style="height:33px;margin:10px 10px">
+    </a>
+    <a href="#" class="brand-logo">#CONTATO</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     </ul>
   </div>   
@@ -26,8 +28,8 @@
         </div>
 
 
-        <div class="input-field col s12">
-        	<input type="submit" value="#chamageral" class="btn right blue" />
+        <div class="input-field col s12 center">
+        	<input type="submit" value="enviar" class="btn degrade" />
         </div>
       </div>
     </form>

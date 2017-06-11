@@ -7,8 +7,8 @@
 		<div class="col s12 center-align">
 			<input type="text" ng-model="form.username" placeholder="Email">
 			<input type="password" ng-model="form.password" placeholder="senha"><br>&nbsp;<br>
-			<a href="cadastrar.php" class="btn blue left">Cadastrar</a>
-			<input type="submit" name="" value="LOGAR" ng-click="login();" class="btn right blue">
+			<a href="frontpage.php" class="btn degrade left">Voltar</a>
+			<input type="submit" name="" value="LOGAR" ng-click="login();" class="btn right degrade">
 		</div>
 	</div>
 </div>

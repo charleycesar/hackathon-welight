@@ -8,8 +8,8 @@
 			<input name="name" required type="text" ng-model="form.name" placeholder="Nome de Usuário">
 			<input required type="email" ng-model="form.username" placeholder="Email">
 			<input required type="password" ng-model="form.password" placeholder="Senha"><br>&nbsp;<br>
-			<input type="button" name="" value="CADASTRAR" class="btn right blue" ng-click="cadastrar()">
-			<a class="btn left blue" href="login.php">LOGIN</a>
+			<input type="button" name="" value="CADASTRAR" class="btn right degrade" ng-click="cadastrar()">
+			<a class="btn left degrade" href="frontpage.php">VOLTAR</a>
 		</div>
 	</div>
 </div>
