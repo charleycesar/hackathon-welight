@@ -17,7 +17,7 @@
   <h5>Como pode ajudar?</h5>
   <p>Envie uma mensagem para o criador deste problema.</p>
     <div class="row">
-    <form class="col s12"  method="POST" action="enviar.php">
+    <form class="col s12"  method="POST">
       <input type="hidden" name="data" value="{{causa}}" />
       <input type="hidden" name="user" value="{{usuario.user}}">
       <div class="row" ng-init="message=false;">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </form>
-    <div ng-if="message" class="col s12 sucesso">Mensagem Enviada Com Sucesso.</div>
+    <div ng-if="message" class="col s12 sucesso" style="border-radius:25px">Mensagem Enviada Com Sucesso.</div>
   </div>
   </div>
 </div>

@@ -15,9 +15,10 @@
   <br>
       <div class="row">
         <div class="col s12">
+
+            <div class="degrade white-text" style="margin-bottom:-7px;padding:8px 18px;border-top-right-radius: 10px">{{causa.titulo}}</div>
             <div class="card white">
               <div class="card-content">
-                <span class="card-title">{{causa.titulo}}</span>
                 <p class="descricao">{{causa.descricao}}</p>
                     <label class="comp_info">Data: {{causa.data}}</label>
                 <br>
