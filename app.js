@@ -47,10 +47,10 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
 .run(function ($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
         $rootScope.currentRoute = current.$$route.originalPath;
-        $rootScope.showNav = false;
+        $rootScope.showNav = true;
         
         if($rootScope.currentRoute == '/frontpage' || $rootScope.currentRoute == '/'){
-            $rootScope.showNav = true;
+            $rootScope.showNav = false;
         }
     });
 })
