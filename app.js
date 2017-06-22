@@ -1,31 +1,78 @@
-var hackathon = angular.module('hackathon',['ngResource'])
-.config(function($httpProvider) {
+var endpoint = "https://chamageral.herokuapp.com/api/";
+var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
+.config(function($httpProvider, $routeProvider) {
 	$httpProvider.interceptors.push('TokenInterceptor');
+    $routeProvider
+        .when('/', {
+            templateUrl : 'login.html',
+            controller  : 'LoginController'
+        })
 
-	console.log('configurado o interceptor');
+        .when('/login', {
+            templateUrl : 'login.html',
+            controller  : 'LoginController'
+        })
+
+        .when('/frontpage', {
+            templateUrl : 'frontpage.html',
+            controller  : 'FrontPageController'
+        })
+
+        .when('/cadastrar', {
+            templateUrl : 'cadastrar.html',
+            controller  : 'CadastroController'
+        })
+
+        .when('/dashboard', {
+            templateUrl : 'dashboard.html',
+            controller  : 'CausaController'
+        })
+
+        .when('/novo_problema', {
+            templateUrl : 'novo_problema.html',
+            controller  : 'CausaAdicionarController'
+        })
+
+        .when('/problema', {
+            templateUrl : 'problema.html',
+            controller  : 'CausaProblemaController'
+        })
+
+        .when('/voluntariar', {
+            templateUrl : 'voluntariar.html',
+            controller  : 'VoluntariarController'
+        });   
+
 })
-.controller('CausaAdicionarController',function($scope, $http){
+.controller('MainController',function($scope, $rootScope){
+    //ifpage is frontpage nao botar nav
+})
+.controller('FrontPageController',function(){
+    
+})
+.controller('CausaAdicionarController',function($scope, $http, $rootScope, $location){
+    $rootScope.titleMenu = '#CHAMAGERAL';
+    $rootScope.back_link = '#dashboard';
     $scope.salvarCausa = function(){
-    	var endpoint = "http://192.168.103.141:5000/api/causa/";
-	    $scope.usuario = JSON.parse(localStorage.getItem('usuario'));
+    	$scope.usuario = JSON.parse(localStorage.getItem('usuario'));
     	$scope.form.usuario_id = $scope.usuario && $scope.usuario.user;
 
-    	$http.post(endpoint, $scope.form).then(
+    	$http.post(endpoint+'causa/', $scope.form).then(
     		function(result){
-    				console.log(result.data);
-    				location.href = "dashboard.php"; 
+				$location.path( "/dashboard" ); 
     		},
     		function(){
 
     		}
     	);
-    	console.log($scope.form);
     }
 })
-.controller('CausaController',function($scope, $http, $rootScope){
+.controller('CausaController',function($scope, $http, $rootScope, $location){
+    $rootScope.titleMenu = '#LISTAGERAL';
+    $rootScope.back_link = false;
+    
     $scope.getCausas = function(){
-    	var endpoint = "http://192.168.103.141:5000/api/causa/"
-    	$http.get(endpoint).then(
+    	$http.get(endpoint+'causa/').then(
     		function(result){
     			$scope.causas = result.data;
     		},
@@ -36,18 +83,20 @@ var hackathon = angular.module('hackathon',['ngResource'])
     };
     $scope.salvaProblemaParaProximaPagina = function(id){
     	localStorage.setItem('id_problema', id);
-		location.href='problema.php';
+		$location.path( "/problema" );
     }
     $scope.getCausas();
 })
 .factory('CausaService', function($resource) {
-return $resource('http://192.168.103.141:5000/api/causa/:id', {id: '@id'},
+return $resource(endpoint + 'causa/:id', {id: '@id'},
     {
         'update': { method:'PUT' },
         'query': {method: 'GET', isArray: false }
     });
 })
 .controller('CausaProblemaController',function($scope, CausaService, $rootScope){
+    $rootScope.titleMenu = '#VISUALIZAÇÃOGERAL';
+    $rootScope.back_link = '#dashboard';
      var id_problema = localStorage.getItem('id_problema');
      $scope.usuario = JSON.parse(localStorage.getItem('usuario'));
      $scope.getProblemaById = function(id_problema){
@@ -62,14 +111,17 @@ return $resource('http://192.168.103.141:5000/api/causa/:id', {id: '@id'},
     };
     $scope.getProblemaById(id_problema);
 })
+.controller('VoluntariarController',function($scope, CausaService, $rootScope){
+    $rootScope.titleMenu = '#CONTATO';
+    $rootScope.back_link = '#problema';
+})
 .factory('LoginService', function($resource) {
-return $resource('http://192.168.103.141:5000/api/login');
+return $resource(endpoint + 'login');
 })
 .controller('LoginController',function($scope, $http, $rootScope){
      
      $scope.login = function(){
-     	var endpoint = 'http://192.168.103.141:5000/api/login';
-    	$http.post(endpoint,$scope.form).then(
+     	$http.post(endpoint + 'login',$scope.form).then(
     			function(data){
     				$rootScope.isLogged = true;
     				$rootScope.usuario = $scope.form.username;
@@ -78,7 +130,7 @@ return $resource('http://192.168.103.141:5000/api/login');
     					user: $scope.form.username
     				}));
     				//$scope.login = data;
-    				location.href="dashboard.php";
+    				location.href="dashboard.html";
     			},
     			function(erro){
     				if(erro.status === 401){
@@ -88,19 +140,18 @@ return $resource('http://192.168.103.141:5000/api/login');
     	);
     };
 })
-.controller('CadastroController',function($scope, $http,$rootScope){
+.controller('CadastroController',function($scope, $http,$rootScope, $location){
 
      $scope.cadastrar = function(){
-     	var endpoint = 'http://192.168.103.141:5000/api/user',
- 	    	validate = $scope.validate();
+     	var validate = $scope.validate();
 
  	    if(validate) {
-	    	$http.post(endpoint,$scope.form).then(
+	    	$http.post(endpoint + 'user',$scope.form).then(
 	    			function(data){
 	    				$rootScope.isLogged = true;
 	    				$rootScope.usuario = $scope.form.username;
 	    				$scope.mensagem = "Usuário cadastrado com sucesso";
-	    				location.href="dashboard.php";
+	    				$location.path( "/dashboard" );
 	    			},
 	    			function(erro){
 	    				$scope.erro = "Ocorreu um erro inesperado.";

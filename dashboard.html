@@ -1,12 +1,3 @@
-<?php include "header.php"; ?>
-<nav>
-  <div class="nav-wrapper">
-    
-    <a class="brand-logo">#LISTA<b>GERAL<b></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-    </ul>
-  </div>   
-</nav>
 <div class="row" ng-controller="CausaController">
   <br>
       <div class="row casebox" ng-repeat="row in causas" style="margin-bottom:0;cursor:pointer;">
@@ -27,9 +18,7 @@
 
 </div>
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" href="novo_problema.php">
+    <a class="btn-floating btn-large red" href="#novo_problema">
       <i class="large material-icons">add</i>
     </a>
   </div>
-
-<?php include "footer.php"; ?>
