@@ -1,7 +1,7 @@
 <html ng-app="hackathon">
 <head>
       <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -17,7 +17,7 @@
   <title></title>
 </head>
 <body ng-controller="MainController">
-        <header ng-show="currentRoute != '/frontpage'">
+        <header ng-show="currentRoute != '/frontpage' || '/'">
             <nav>
                 <div class="nav-wrapper">
                     <a ng-href="{{back_link}}" ng-show="back_link"><img src="img/seta.png" style="height:33px;margin:10px 10px"></a>
