@@ -4,8 +4,8 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
 	$httpProvider.interceptors.push('TokenInterceptor');
     $routeProvider
         .when('/', {
-            templateUrl : 'login.html',
-            controller  : 'LoginController'
+            templateUrl : 'frontpage.html',
+            controller  : 'FrontPageController'
         })
 
         .when('/login', {
