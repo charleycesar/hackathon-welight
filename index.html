@@ -17,7 +17,7 @@
   <title></title>
 </head>
 <body ng-controller="MainController">
-        <header ng-show="currentRoute != '/frontpage' || '/'">
+        <header ng-show="showNav">
             <nav>
                 <div class="nav-wrapper">
                     <a ng-href="{{back_link}}" ng-show="back_link"><img src="img/seta.png" style="height:33px;margin:10px 10px"></a>
