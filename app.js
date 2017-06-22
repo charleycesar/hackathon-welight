@@ -1,4 +1,4 @@
-var endpoint = "https://chamageral.herokuapp.com/api/";
+var endpoint = "https://chamageral-backend.herokuapp.com/api/";
 var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
 .config(function($httpProvider, $routeProvider) {
 	$httpProvider.interceptors.push('TokenInterceptor');
