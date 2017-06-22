@@ -44,8 +44,13 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
         });   
 
 })
+.run(function ($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
+        $rootScope.currentRoute = current.$$route.originalPath;
+    });
+})
 .controller('MainController',function($scope, $rootScope){
-    //ifpage is frontpage nao botar nav
+
 })
 .controller('FrontPageController',function(){
     
@@ -118,8 +123,10 @@ return $resource(endpoint + 'causa/:id', {id: '@id'},
 .factory('LoginService', function($resource) {
 return $resource(endpoint + 'login');
 })
-.controller('LoginController',function($scope, $http, $rootScope){
-     
+.controller('LoginController',function($scope, $http, $rootScope, $location){
+    $rootScope.titleMenu = '#CHAMAGERAL';
+    $rootScope.back_link = '#frontpage';
+
      $scope.login = function(){
      	$http.post(endpoint + 'login',$scope.form).then(
     			function(data){
@@ -130,7 +137,7 @@ return $resource(endpoint + 'login');
     					user: $scope.form.username
     				}));
     				//$scope.login = data;
-    				location.href="dashboard.html";
+    				$location.path( "/dashboard" );
     			},
     			function(erro){
     				if(erro.status === 401){
@@ -141,6 +148,8 @@ return $resource(endpoint + 'login');
     };
 })
 .controller('CadastroController',function($scope, $http,$rootScope, $location){
+    $rootScope.titleMenu = '#CHAMAGERAL';
+    $rootScope.back_link = '#frontpage';
 
      $scope.cadastrar = function(){
      	var validate = $scope.validate();
