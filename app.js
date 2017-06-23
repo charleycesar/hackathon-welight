@@ -41,6 +41,11 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
         .when('/voluntariar', {
             templateUrl : 'voluntariar.html',
             controller  : 'VoluntariarController'
+        })
+
+        .when('/sobre', {
+            templateUrl : 'sobre.html',
+            controller  : 'SobreController'
         });   
 
 })
@@ -55,6 +60,10 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
     });
 })
 .controller('MainController',function($scope, $rootScope){
+})
+.controller('SobreController',function($scope, $rootScope){
+    $rootScope.titleMenu = '#SOBRE';
+    $rootScope.back_link = '#dashboard';
 })
 .controller('FrontPageController',function(){
     

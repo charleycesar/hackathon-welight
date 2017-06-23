@@ -96,16 +96,36 @@ a {
 	cursor: pointer;
 }
 .dir {
-	right:6%;
+	left:15%;
 	opacity:0.5;
 }
 .dil {
 	left:6%;
 }
-
+.shares {
+	right:6%;
+}
 /* CADASTRO */
 .input-field {
 	margin-top:0;
+}
+/* SOBRE */
+.facebook-responsive {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.facebook-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.container {
+	width:97%;
 }
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
 	border-bottom: 1px solid #E43B79;
@@ -120,20 +140,33 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 		line-height: 54px;
 		height:56px;
 	}
+.container {
+	width:80%;
+}
 
 	.dir {
-		right:9%;
+		left:13%;
 	}
 	.dil {
 		left:9%;
 	}
+.shares {
+	right:9%;
+}
 }
 
 @media only screen and (min-width: 993px) {
+.container {
+	width:70%;
+}
 	.dir {
-		right:16%;
+		left:19%;
 	}
 	.dil {
 		left:16%;
 	}
+
+.shares {
+	right:16%;
+}
 }
