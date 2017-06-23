@@ -18,14 +18,20 @@
 </head>
 <body ng-controller="MainController">
         <header ng-show="showNav">
+          <div class="navbar-fixed">
             <nav>
+              <div class="container">
                 <div class="nav-wrapper">
-                    <a ng-href="{{back_link}}" ng-show="back_link"><img src="img/seta.png" style="height:33px;margin:10px 10px"></a>
-                    <a class="brand-logo">{{titleMenu}}</a>
+                    <a ng-href="{{back_link}}" ng-show="back_link" class="left"><img src="img/seta.png" style="height:33px;margin:10px 10px"></a>
+                    <a class="brand-logo">&nbsp;&nbsp;{{titleMenu}}</a>
+                    <!--
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                     </ul>
-                </div>   
+                    -->
+                </div>
+              </div>
             </nav>
+          </div>
         </header>
 
         <div id="main">

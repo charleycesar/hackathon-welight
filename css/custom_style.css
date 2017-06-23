@@ -17,7 +17,7 @@ a {
 	border-radius:20px;
 }
 .card {
-	background:#f8f8f8!important;
+	background:#f0f0f0!important;
 }
 .degrade {
 	background:linear-gradient(to right, #EE861F,#E43B79);
@@ -47,14 +47,48 @@ a {
 	font-size:1.2rem!important;
 	font-weight: bold!important;
 }
+.titulo_card {
+	margin-bottom:-7px;
+	padding:8px 18px;
+	border-top-right-radius: 10px;
+}
 .card-content {
 	padding:8px 18px!important;
 }
 .descricao {
 	margin-bottom:8px!important;
+	color:#666!important;
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+	box-shadow:none;
+}
+.deletebtn {
+	font-size:0.8rem;
+	margin-top:3px;
+	opacity:0.6;
+}
+.deletebtn:hover {
+	opacity:1;
+}
+.displayitems {
+	margin-top:10px;
 }
 
-/* NOVO_PROBLEMA */
-.recurso_box {
+/* CADASTRO */
+.input-field {
+	margin-top:0;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+	border-bottom: 1px solid #E43B79;
+    box-shadow: 0 1px 0 0 #E43B79;
+}
+input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+	color:#E43B79;
+}
 
+@media only screen and (min-width: 601px) {
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+		line-height: 54px;
+		height:56px;
+	}
 }

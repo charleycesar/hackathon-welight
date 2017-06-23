@@ -55,7 +55,6 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
     });
 })
 .controller('MainController',function($scope, $rootScope){
-
 })
 .controller('FrontPageController',function(){
     
@@ -105,7 +104,7 @@ return $resource(endpoint + 'causa/:id', {id: '@id'},
     });
 })
 .controller('CausaProblemaController',function($scope, CausaService, $rootScope){
-    $rootScope.titleMenu = '#VISUALIZAÇÃOGERAL';
+    $rootScope.titleMenu = '#VERCAUSA';
     $rootScope.back_link = '#dashboard';
      var id_problema = localStorage.getItem('id_problema');
      $scope.usuario = JSON.parse(localStorage.getItem('usuario'));

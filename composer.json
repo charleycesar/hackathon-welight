@@ -4,7 +4,11 @@
         {
             "name": "Charley",
             "email": "charleycesar@gmail.com"
-        }
+        },
+        {
+        	"name": "Daniel",
+        	"email": "contato.fabbri@gmail.com"
+        },
     ],
     "require": {}
 }

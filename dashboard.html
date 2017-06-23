@@ -1,22 +1,29 @@
-<div class="row" ng-controller="CausaController">
-  <br>
+<div class="row displayitems" ng-controller="CausaController">
+    <div class="container">
       <div class="row casebox" ng-repeat="row in causas" style="margin-bottom:0;cursor:pointer;">
         <div class="col s12">
           <a ng-click="salvaProblemaParaProximaPagina(row._id)">
-            <div class="degrade white-text" style="margin-bottom:-7px;padding:8px 18px;border-top-right-radius: 10px">{{row.titulo}}</div>
+            <div class="degrade white-text titulo_card">
+                <div class="row" style="margin-bottom:0">
+                  <div class="col s9 truncate"><b>{{row.titulo}}</b></div>
+                  <div class="col s3 grey-color deletebtn right-align">deletar</div>
+                </div>
+            </div>
             <div class="card">
               <div class="card-content">
                 <p class="truncate descricao" style="font-weight: normal;margin-bottom:0!important">{{row.descricao}}</p>
                     <label class="comp_info">Data: <span class="dates">{{row.data}}</span></label>
-                <br>
+                    <br>
                     <label class="comp_info">Local: {{row.local}}</label>
+                    
               </div>
             </div>
           </a>
         </div>
       </div>
-
+    </div>
 </div>
+
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large red" href="#novo_problema">
       <i class="large material-icons">add</i>
