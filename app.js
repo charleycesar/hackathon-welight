@@ -170,7 +170,7 @@ return $resource(endpoint + 'login');
 	    				$rootScope.isLogged = true;
 	    				$rootScope.usuario = $scope.form.username;
 	    				$scope.mensagem = "Usuário cadastrado com sucesso";
-	    				$location.path( "/dashboard" );
+	    				$location.path( "/login" );
 	    			},
 	    			function(erro){
 	    				$scope.erro = "Ocorreu um erro inesperado.";
@@ -183,3 +183,33 @@ return $resource(endpoint + 'login');
     	return $scope.formulario.$valid;
     }
 })
+.filter('reverse', function() {
+  return function(items) {
+    return items.slice(items).reverse();
+  };
+});
+
+  function confDelete() {
+    $('.trash').animate({'opacity':'0'},200);
+    $('.conf').animate({'opacity':'1'},400);
+    $('.conf').removeClass('hide');
+    $('.trash').addClass('hide');
+  }
+  function cancDelete() {
+    $('.trash').animate({'opacity':'1'},200);
+    $('.conf').animate({'opacity':'0'},400);
+    $('.trash').removeClass('hide');
+    $('.conf').addClass('hide');
+  }
+  function showAll(bool) {
+      if (bool) {
+        $('.casebox').show();
+        $('.dil').animate({'opacity':'1'}, 200);
+        $('.dir').animate({'opacity':'0.5'}, 200);
+      } else {
+        $('.casebox').hide();
+        $('.casebox .deletebtn').parent().parent().parent().parent().parent().parent().show();
+        $('.dir').animate({'opacity':'1'}, 200);
+        $('.dil').animate({'opacity':'0.5'}, 200);
+      }
+  }

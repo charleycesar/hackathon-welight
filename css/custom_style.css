@@ -51,6 +51,8 @@ a {
 	margin-bottom:-7px;
 	padding:8px 18px;
 	border-top-right-radius: 10px;
+	height:40px;
+	cursor:pointer;
 }
 .card-content {
 	padding:8px 18px!important;
@@ -64,14 +66,41 @@ a {
 }
 .deletebtn {
 	font-size:0.8rem;
-	margin-top:3px;
+	margin-top:0px;
 	opacity:0.6;
+	cursor:pointer;
+	color:#E43B79;
 }
 .deletebtn:hover {
 	opacity:1;
 }
 .displayitems {
 	margin-top:10px;
+}
+.conf {
+	opacity:0;
+}
+.infoline {
+	background:#e0e0e0;
+	color:#999;
+	font-size:0.7rem;
+}
+
+.dashicons {
+	position:fixed;
+	margin-top:-20px;
+	color:#f8f8f8;
+	top:35;
+	z-index: 999;
+	font-size:2rem;
+	cursor: pointer;
+}
+.dir {
+	right:6%;
+	opacity:0.5;
+}
+.dil {
+	left:6%;
 }
 
 /* CADASTRO */
@@ -90,5 +119,21 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 		line-height: 54px;
 		height:56px;
+	}
+
+	.dir {
+		right:9%;
+	}
+	.dil {
+		left:9%;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.dir {
+		right:16%;
+	}
+	.dil {
+		left:16%;
 	}
 }
