@@ -6,7 +6,7 @@
             <div class="degrade white-text titulo_card">
                 <div class="row" style="margin-bottom:0">
                   <div class="col s9 truncate"><b>{{row.titulo}}</b></div>
-                  <div class="col s3 grey-color deletebtn right-align">deletar</div>
+                  <div class="col s3 grey-color deletebtn right-align" ng-click="deletarProblema(row);" ng-if="usuario == row.usuario_id">deletar</div>
                 </div>
             </div>
             <div class="card">

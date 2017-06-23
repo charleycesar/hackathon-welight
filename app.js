@@ -76,10 +76,10 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
     	);
     }
 })
-.controller('CausaController',function($scope, $http, $rootScope, $location){
+.controller('CausaController',function($scope, $http, $rootScope, $location, CausaService){
     $rootScope.titleMenu = '#LISTAGERAL';
     $rootScope.back_link = false;
-    
+    $scope.usuario = JSON.parse(localStorage.usuario).user;
     $scope.getCausas = function(){
     	$http.get(endpoint+'causa/').then(
     		function(result){
@@ -90,6 +90,12 @@ var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
     		}
     	);
     };
+    $scope.deletarProblema = function(item){
+        CausaService.delete({id: item._id}, function(){
+          var index = $scope.causas.indexOf(item);
+          $scope.causas.splice(index, 1);
+        });
+    }
     $scope.salvaProblemaParaProximaPagina = function(id){
     	localStorage.setItem('id_problema', id);
 		$location.path( "/problema" );
