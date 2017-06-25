@@ -1,4 +1,4 @@
-var endpoint = "https://chamageral-backend.herokuapp.com/api/";
+var endpoint = "http://chamageral-backend.herokuapp.com/api/";
 var hackathon = angular.module('hackathon',['ngResource','ngRoute'])
 .config(function($httpProvider, $routeProvider) {
 	$httpProvider.interceptors.push('TokenInterceptor');
@@ -135,9 +135,34 @@ return $resource(endpoint + 'causa/:id', {id: '@id'},
     };
     $scope.getProblemaById(id_problema);
 })
-.controller('VoluntariarController',function($scope, CausaService, $rootScope){
+.controller('VoluntariarController',function($scope, CausaService, $rootScope, $http){
     $rootScope.titleMenu = '#CONTATO';
     $rootScope.back_link = '#problema';
+    var id_problema = localStorage.getItem('id_problema');
+
+    $scope.send_mail = function(){
+        $scope.mail = {
+            "title" : $scope.causa.titulo,
+            "message" : $scope.messageBody,
+            "to" : $scope.causa.usuario_id
+        }
+        $http.post(endpoint + 'sendmail',$scope.mail).then(
+            function(data){
+            }       
+        );
+       $scope.message = true;
+    }
+    $scope.getProblemaById = function(id_problema){
+        CausaService.query({id: id_problema}).$promise.then(
+                function(success){
+                    $scope.causa = success;
+                },
+                function(erro){
+
+                }
+        );
+    };
+    $scope.getProblemaById(id_problema);
 })
 .factory('LoginService', function($resource) {
 return $resource(endpoint + 'login');

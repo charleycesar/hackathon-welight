@@ -4,21 +4,19 @@
   <h5>Como pode ajudar?</h5>
   <p>Envie uma mensagem para o criador desta causa dizendo como pode ajudar.</p>
     <div class="row">
-    <form class="col s12"  method="POST">
       <input type="hidden" name="data" value="{{causa}}" />
       <input type="hidden" name="user" value="{{usuario.user}}">
       <div class="row" ng-init="message=false;">
 
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" style="height:42%"></textarea>
+          <textarea id="textarea1" ng-model="messageBody" class="materialize-textarea" style="height:42%"></textarea>
           <label for="textarea1">Descrição</label>
         </div>
 
         <div class="input-field col s12 center">
-        	<input ng-click="message=true" type="submit" value="enviar" class="btn degrade" />
+        	<button ng-click="send_mail();" class="btn degrade"> Enviar </button>
         </div>
       </div>
-    </form>
     <div ng-if="message" class="col s12 sucesso" style="border-radius:25px">Mensagem Enviada Com Sucesso.</div>
   </div>
   </div>
